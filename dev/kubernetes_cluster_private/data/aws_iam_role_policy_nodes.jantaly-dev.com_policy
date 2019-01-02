@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeRegions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::jantaly-dev"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/addons/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/cluster.spec",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/config",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/instancegroup/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/pki/issued/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/pki/private/kube-proxy/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/pki/private/kubelet/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/pki/ssh/*",
+        "arn:aws:s3:::jantaly-dev/jantaly-dev.com/secrets/dockerconfig"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:GetRepositoryPolicy",
+        "ecr:DescribeRepositories",
+        "ecr:ListImages",
+        "ecr:BatchGetImage"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
